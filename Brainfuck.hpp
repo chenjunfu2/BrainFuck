@@ -60,8 +60,10 @@ public:
 			printf("内存扩容失败");
 			exit(0);
 		}
+		//扩容成功替换指针
+		pBase = pNewBase;
 		//新位置（后半段）置零
-		memset(&pBase[szSize + 1], 0, sizeof(*pBase) * szSize);
+		memset(&pBase[szSize], 0, sizeof(*pBase) * szSize);
 		szSize *= 2;
 	}
 public:
