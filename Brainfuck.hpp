@@ -178,10 +178,10 @@ void ConvertToDefine(void)
 			printf("G ");
 			break;
 		case'[':
-			printf("W");
+			printf("W ");
 			break;
 		case']':
-			printf("M");
+			printf("M ");
 			break;
 		case '\n':
 			printf("\n");
