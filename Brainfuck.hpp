@@ -26,13 +26,14 @@ Brainfuck	C
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define R /*>*/ ++ptr;			
 #define L /*<*/ --ptr;			
 #define A /*+*/ ++*ptr;			
 #define S /*-*/ --*ptr;			
 #define P /*.*/ putchar(*ptr);			
-#define G /*,*/ *ptr=getch();			
+#define G /*,*/ *ptr=getchar();			
 #define W /*[*/ while (*ptr) {			
 #define M /*]*/ }
 
@@ -146,8 +147,22 @@ void ConvertToCLanguage(void)
 		case '\n':
 			printf("\n");
 			break;
+		case '#'://单行注释
+			while ((c = getchar()) != '\n')
+			{
+				if (c == EOF)
+				{
+					return;
+				}
+				continue;
+			}
+			printf("\n");
+			break;
 		default:
-			printf("\n\'%c\'[ASCII:%d] is unknow!\n", c, c);
+			if (!isspace(c))
+			{
+				printf("\n\'%c\'[ASCII:%d] is unknow!\n", c, c);
+			}
 			break;
 		}
 	}
@@ -188,8 +203,22 @@ void ConvertToDefine(void)
 		case '\n':
 			printf("\n");
 			break;
+		case '#'://单行注释
+			while ((c = getchar()) != '\n')
+			{
+				if (c == EOF)
+				{
+					return;
+				}
+				continue;
+			}
+			printf("\n");
+			break;
 		default:
-			printf("\n\'%c\'[ASCII:%d] is unknow!\n", c, c);
+			if (!isspace(c))
+			{
+				printf("\n\'%c\'[ASCII:%d] is unknow!\n", c, c);
+			}
 			break;
 		}
 	}
