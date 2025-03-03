@@ -39,4 +39,4 @@
   
   如果需要bf代码自行处理回显之类（或无缓冲区输入等）的操作，请在Brainfuck.hpp内的转换函数（ConvertToCLanguage和ConvertToDefine）中，
   
-  把下面的printf里的getchar修改为getch（如果你用的编译器是msvc，则为_getch)，并在hpp顶部#include <conio.h>头文件，即可正常运行。
+  把下面的printf里的getchar修改为getch（如果你用的编译器是msvc，则为_getch)，并在Brainfuck.hpp的开头#include <conio.h>头文件，即可正常运行。
