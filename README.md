@@ -7,15 +7,19 @@
 
 1.Brainfuck.hpp
 
-  用于表示bf语言关键字的宏定义。
+  用于表示bf语言关键字的宏定义（用于直接编写，不过受限于cpp编译器，没办法使用bf原生符号作为宏定义）。
   
-  用于支持从bf编译到cpp代码之后执行的类BrainFuckPtr。
+  用于支持从bf编译到c代码之后等效执行的类BrainFuckPtr。
   
-  以及用于从bf代码编译到c代码的转换函数（ConvertToCLanguage）或表示bf语言关键字的宏定义的转换函数（ConvertToDefine）。
+  用于支持从bf代码编译到c代码的转换函数（ConvertToCLanguage）或表示bf语言关键字的宏定义的转换函数（ConvertToDefine）。
   
 2.Brainfuck.cpp
 
   用于切换功能的宏定义：执行模式、转换bf到c代码、转换bf到宏定义。
+
+  用于放入bf转换为c后的代码的执行函数Execute。
+
+  主函数main，根据文件开头的宏定义选择程序最终行为。
 
 ### 用法：
 
