@@ -43,7 +43,7 @@
   
   如果需要bf代码自行处理回显之类（或无缓冲区输入等）的操作，请在Brainfuck.hpp内的转换函数ConvertToCLanguage中，
   
-  把函数里所有的printf里的getchar改了，然后在文件开头附近找到宏定义，把#define G /*,*/ *ptr=getchar();里的getchar也改了，
+  把函数里所有的printf里的getchar改了，然后在文件开头附近找到宏定义，把#define G /\*,\*/ \*ptr=getchar();里的getchar也改了，
 
   一般是把getchar修改为getch，但是如果你用的编译器是msvc，则修改为_getch，
   
